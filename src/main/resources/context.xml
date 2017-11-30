@@ -2,13 +2,14 @@
 
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tool="http://www.springframework.org/schema/tool"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
     <!--<context:annotation-config/>-->
     <bean class="quoters.InjectRandomIntAnnotationBeanPostProcessor"/>
-    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+    <!--<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>-->
     <bean class="quoters.ProfilingHandlerBeanPostProcessor"/>
 
 <bean class="quoters.TerminatorQouter" id="terminatorQouter">

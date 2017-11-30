@@ -1,6 +1,7 @@
 package quoters;
 
 import javax.annotation.PostConstruct;
+
 @Profiling
 public class TerminatorQouter implements Quoter {
     @InjectRandomInt(min = 2, max = 7)
@@ -21,6 +22,7 @@ public class TerminatorQouter implements Quoter {
     }
 
     @Override
+    @PostProxy
     public void sayQuote() {
         for (int i = 0; i < repeat; i++) {
             System.out.println("message = " + message);
