@@ -9,10 +9,11 @@
 
     <!--<context:annotation-config/>-->
     <bean class="quoters.InjectRandomIntAnnotationBeanPostProcessor"/>
-    <!--<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>-->
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
     <bean class="quoters.ProfilingHandlerBeanPostProcessor"/>
+    <bean class="quoters.PostProxyInvokerContextListener"/>
 
-<bean class="quoters.TerminatorQouter" id="terminatorQouter">
+    <bean class="quoters.TerminatorQouter" id="terminatorQouter">
     <property name="message" value="I'll be back"/>
 
 </bean>
