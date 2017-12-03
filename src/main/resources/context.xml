@@ -7,6 +7,7 @@
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
     <!--<context:annotation-config/>-->
+    <bean class="quoters.PostProxyInvokerContextListener"/>
     <bean class="quoters.InjectRandomIntAnnotationBeanPostProcessor"/>
     <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
     <bean class="quoters.ProfilingHandlerBeanPostProcessor"/>
