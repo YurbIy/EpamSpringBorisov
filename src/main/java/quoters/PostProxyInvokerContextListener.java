@@ -1,6 +1,6 @@
 package quoters;
 
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.context.ApplicationContext;
@@ -12,6 +12,7 @@ import java.lang.reflect.Method;
 
 public class PostProxyInvokerContextListener implements ApplicationListener<ContextRefreshedEvent> {
 
+    @Autowired
     private ConfigurableListableBeanFactory factory;
 
 
