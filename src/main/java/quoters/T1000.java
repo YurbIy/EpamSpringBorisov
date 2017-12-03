@@ -1,6 +1,6 @@
 package quoters;
 
-public class T1000 extends TerminatorQouter{
+public class T1000 extends TerminatorQouter implements Quoter{
 
     @Override
     public void sayQuote() {
