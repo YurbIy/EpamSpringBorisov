@@ -10,6 +10,9 @@ import java.time.LocalTime;
 import java.util.HashMap;
 import java.util.Map;
 
+import static java.time.LocalTime.now;
+
+
 public class PeriodicalScopeConfigure implements Scope {
 
     Map<String, Pair<LocalTime, Object>> map = new HashMap<>();
@@ -18,9 +21,14 @@ public class PeriodicalScopeConfigure implements Scope {
     public Object get(String name, ObjectFactory<?> objectFactory) {
         if(map.containsKey(name)){
             Pair<LocalTime, Object> pair = map.get(name);
-            int secondsSinceLastRequest
+            int secondsSinceLastRequest = now().getSecond() - pair.getKey().getSecond();
+            if (secondsSinceLastRequest > 5) {
+                map.put(name, new Pair( now(), objectFactory.getObject()));
+            }
+        } else{
+            map.put(name, new Pair(now(), objectFactory.getObject()));
         }
-        return null;
+        return map.get(name).getValue();
     }
 
     @Nullable
